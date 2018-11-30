@@ -128,6 +128,22 @@ def lines():
 
     line1 = rg.Line(rg.Point(0, 100), rg.Point(100, 150))
     line1.color = 'red'
+    line1.attach_to(window)
+
+    line2 = rg.Line(rg.Point(100, 200) ,rg.Point(200, 100))
+    line2.color = 'blue'
+    line2.thickness = 4
+    line2.attach_to(window)
+    line2.get_midpoint()
+
+    print('')
+    print(line1.get_midpoint())
+    print(line1.get_midpoint().x)
+    print(line1.get_midpoint().y)
+    print('')
+    print(line2.get_midpoint())
+    print(line2.get_midpoint().x)
+    print(line2.get_midpoint().y)
 
     window.render()
     window.close_on_mouse_click()
@@ -152,7 +168,7 @@ def lines():
 
     -- Waits for the user to press the mouse, then closes the window.
     """
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
 
 
 # -----------------------------------------------------------------------------
