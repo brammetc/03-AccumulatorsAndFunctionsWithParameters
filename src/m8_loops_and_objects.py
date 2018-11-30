@@ -6,13 +6,17 @@ This module demonstrates simple LOOPS of the form:
 and also USING OBJECTS.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
-         Aaron Wilkin, their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Aaron Wilkin, their colleagues, and Tanner Brammeier.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
 
 def main():
+    print_sequence1()
+    draw_circles1()
+    print_sequence2()
+    print_sequence3()
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
 
@@ -29,7 +33,7 @@ def print_sequence1():
        200
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this function, per its doc-string above.
+    # DONE: 2. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # -------------------------------------------------------------------------
@@ -37,6 +41,9 @@ def print_sequence1():
     print('--------------------------------------------------')
     print('Running print_sequence1:')
     print('--------------------------------------------------')
+
+    for k in range(21):
+        print(k * 10)
 
 
 def draw_circles1():
@@ -58,6 +65,17 @@ def draw_circles1():
     print('Running draw_circles1:  See graphics window')
     print('--------------------------------------------------')
 
+    width = 400
+    height = 400
+    window = rg.RoseWindow(width, height)
+
+    center_point = rg.Point(200, 200)
+    circle = rg.Circle(center_point, 10)
+    circle.attach_to(window)
+
+    window.render()
+    window.close_on_mouse_click()
+
 
 def print_sequence2():
     """
@@ -71,7 +89,7 @@ def print_sequence2():
       390.
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement this function, per its doc-string above.
+    # DONE: 4. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # -------------------------------------------------------------------------
@@ -80,6 +98,10 @@ def print_sequence2():
     print('Running print_sequence2:')
     print('--------------------------------------------------')
 
+    total = 30
+    for k in range(18):
+        total = total + 20
+        print(total)
 
 def draw_circles2():
     """
@@ -113,7 +135,7 @@ def print_sequence3():
       100.
     """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement this function, per its doc-string above.
+    # DONE: 6. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # -------------------------------------------------------------------------
@@ -121,6 +143,11 @@ def print_sequence3():
     print('--------------------------------------------------')
     print('Running print_sequence3:')
     print('--------------------------------------------------')
+
+    total = 0
+    for k in range(100):
+        total = total + 1
+        print(total)
 
 
 def draw_circles3():
