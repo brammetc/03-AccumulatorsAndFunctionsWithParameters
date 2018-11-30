@@ -69,11 +69,16 @@ def draw_circles1():
     height = 400
     window = rg.RoseWindow(width, height)
 
+    for k in range(21):
+        r = k*10
+
     center_point = rg.Point(200, 200)
-    circle = rg.Circle(center_point, 10)
+    circle = rg.Circle(center_point, )
+
     circle.attach_to(window)
 
     window.render()
+
     window.close_on_mouse_click()
 
 
