@@ -10,7 +10,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
 """  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
-
+import math
 
 def main():
     print_sequence1()
@@ -19,6 +19,8 @@ def main():
     draw_circles2()
     print_sequence3()
     draw_circles3()
+    print_cosines()
+    draw_cosines_and_sines()
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
 
@@ -200,6 +202,9 @@ def draw_circles3():
 
 
 def print_cosines():
+    for k in range(101):
+        print(80 * math.cos(k))
+
     """
     For each of the integers 0  1  2  ... 100,
     prints 80 times the cosine of that integer.
@@ -218,7 +223,7 @@ def print_cosines():
        68.9855097830147
     """
     # -------------------------------------------------------------------------
-    # TODO: 8. Implement this function, per its doc-string above.
+    # DONE: 8. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     #
@@ -236,6 +241,17 @@ def print_cosines():
 
 
 def draw_cosines_and_sines():
+    window = rg.RoseWindow(400, 400)
+    for k in range(101):
+        point1 = 200 + 80 * math.cos(k)
+        point2 = 200 + 80 * math.sin(k)
+        center_point = rg.Point(point1, point2)
+        circle = rg.Circle(center_point, 10)
+        circle.attach_to(window)
+        window.render()
+    window.close_on_mouse_click()
+
+
     """
     -- Constructs a window whose width and height are both 400.
     -- Constructs and draws rg.Circle objects such that:
@@ -250,7 +266,7 @@ def draw_cosines_and_sines():
     -- Waits for the user to press the mouse, then closes the window.
     """
     # -------------------------------------------------------------------------
-    # TODO: 9. Implement this function, per its doc-string above.
+    # DONE: 9. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # -------------------------------------------------------------------------
