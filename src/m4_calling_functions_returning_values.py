@@ -171,16 +171,17 @@ def run_test_digits_in_cube():
     print('       actual:  ', answer)
 
 def digits_in_cube(n):
-    n3 = n ** 3
-    return sum_of_digits(n3)
-    """
+    n = n ** 3
+    return sum_of_digits(n)
+
+"""
         What comes in:  A positive integer.
         What goes out:  The sum of the digits in the CUBE of the integer.
         Side effects:   None.
         Example:
       If the integer (n) is 5    (so n cubed is 125),
       this function returns (1 + 2 + 5), which is 8.
-    """
+"""
     # -------------------------------------------------------------------------
     # TODO: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
